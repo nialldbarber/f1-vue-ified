@@ -21,7 +21,7 @@
       <Row :row="teams" />
       <Row :row="poles" />
       <Row :row="wins" />
-      <Row :row="championships" />
+      <ChampionshipRow :championships="championships" />
     </div>
   </div>
 </template>
@@ -29,11 +29,12 @@
 <script>
 import Row from '~/components/grid/Row.vue';
 import AgeRow from '~/components/grid/AgeRow.vue';
+import ChampionshipRow from '~/components/grid/ChampionshipRow.vue';
 
 export default {
   name: 'Grid',
   props: ['data'],
-  components: { Row, AgeRow },
+  components: { Row, AgeRow, ChampionshipRow },
 };
 </script>
 
@@ -47,6 +48,12 @@ export default {
     min-height: 50px;
     align-items: center;
     border-top: 1px solid #555;
+
+    & > div {
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+    }
   }
 }
 </style>
