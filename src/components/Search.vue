@@ -1,16 +1,21 @@
 <template>
   <form>
-    <input type="text" placeholder="Search..." v-model="name" />
+    <input type="text" placeholder="Search..." v-on:keyup="searchAllDrivers" />
   </form>
-  <p>Name: {{ name }}</p>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
   name: 'Search',
-  data: () => ({
-    name: '',
-  }),
+  computed: mapGetters(['input']),
+  methods: {
+    ...mapActions(['searchDrivers']),
+    searchAllDrivers(e) {
+      this.searchDrivers(e.target.value);
+    },
+  },
 };
 </script>
 

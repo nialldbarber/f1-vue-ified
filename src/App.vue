@@ -1,8 +1,8 @@
 <template>
   <Navigation />
-  <h1>Drivers</h1>
+  <p>{{ input }}</p>
   <ul>
-    <li v-for="{ id, name, country, wins } in drivers" :key="id">
+    <li v-for="{ id, name, country, wins } in filteredDrivers" :key="id">
       <p>Name: {{ name }}</p>
       <p>Country: {{ country }}</p>
       <p>Wins: {{ wins }}</p>
@@ -19,12 +19,20 @@ import Navigation from '~/components/Navigation.vue';
 export default {
   name: 'App',
   components: { Navigation },
-  computed: mapGetters(['drivers', 'loading', 'error']),
   methods: {
     ...mapActions(['fetchDrivers']),
   },
   mounted() {
     this.fetchDrivers();
+  },
+  computed: {
+    ...mapGetters(['drivers', 'loading', 'error', 'input']),
+    filteredDrivers() {
+      const updatedDriver = this.drivers.filter((driver) => {
+        return driver.name.toLowerCase().includes(this.input.toLowerCase());
+      });
+      return updatedDriver;
+    },
   },
 };
 </script>
