@@ -1,14 +1,13 @@
 <template>
   <Navigation />
   <h1>Drivers</h1>
-  <p>{{ drivers }}</p>
-  <!-- <ul>
-    <li v-for="{ name, age, team } in drivers" :key="age">
+  <ul>
+    <li v-for="{ id, name, country, wins } in drivers" :key="id">
       <p>Name: {{ name }}</p>
-      <p>Age: {{ age }}</p>
-      <p>Team: {{ team }}</p>
+      <p>Country: {{ country }}</p>
+      <p>Wins: {{ wins }}</p>
     </li>
-  </ul> -->
+  </ul>
   <p v-if="loading">LOADING</p>
   <p v-if="error">ERROR!</p>
 </template>

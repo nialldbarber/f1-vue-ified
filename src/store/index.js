@@ -2,21 +2,18 @@ import { createStore } from 'vuex';
 import { API } from '~/constants';
 
 export const store = createStore({
-  // State
   state: {
     drivers: [],
     loading: true,
     error: false,
   },
-  // Getters
   getters: {
     drivers: (state) => state.drivers,
     loading: (state) => state.loading,
     error: (state) => state.error,
   },
-  // Mutations
   actions: {
-    async fetchDrivers({ commit }) {
+    fetchDrivers: async ({ commit }) => {
       try {
         await fetch(API)
           .then((res) => res.json())
@@ -32,7 +29,6 @@ export const store = createStore({
       }
     },
   },
-  // Actions
   mutations: {
     setDrivers: (state, drivers) => (state.drivers = drivers),
     setLoading: (state, loading) => (state.loading = loading),
