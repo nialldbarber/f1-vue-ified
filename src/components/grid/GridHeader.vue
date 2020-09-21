@@ -1,5 +1,15 @@
 <template>
-  <p>Dis da header</p>
+  <div class="grid-container">
+    <div class="header row">
+      <div>Name</div>
+      <div>Age</div>
+      <div>Country</div>
+      <div>Team(s)</div>
+      <div>Poles</div>
+      <div>Wins</div>
+      <div>Championship(s)</div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -8,4 +18,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.header {
+  background: #fff;
+}
+</style>

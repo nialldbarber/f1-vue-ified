@@ -16,6 +16,6 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  background: pink;
+  background: #fff;
 }
 </style>
