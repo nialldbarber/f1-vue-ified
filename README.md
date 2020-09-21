@@ -44,6 +44,8 @@ The application is a simple table that will display F1 drivers who have won a ch
 
 ## Todos
 
+- [ ] Add some global state via Vuex
+
 - [ ] Fetch api - get drivers and display them in Grid component
 
 ### Components
