@@ -14,8 +14,8 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import MainLayout from '~/components/layouts/MainLayout.vue';
-import GridHeader from '~/components/GridHeader.vue';
-import Grid from '~/components/Grid.vue';
+import GridHeader from '~/components/grid/GridHeader.vue';
+import Grid from '~/components/grid/Grid.vue';
 import Loading from '~/components/Loading.vue';
 import Error from '~/components/Error.vue';
 
