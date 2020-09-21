@@ -1,6 +1,6 @@
 <template>
   <Navigation />
-  <p>{{ input }}</p>
+  <p v-if="filteredItemLength">EEEK! Error yo!</p>
   <ul>
     <li v-for="{ id, name, country, wins } in filteredDrivers" :key="id">
       <p>Name: {{ name }}</p>
@@ -19,6 +19,9 @@ import Navigation from '~/components/Navigation.vue';
 export default {
   name: 'App',
   components: { Navigation },
+  data: () => ({
+    searchError: false,
+  }),
   methods: {
     ...mapActions(['fetchDrivers']),
   },
@@ -32,6 +35,13 @@ export default {
         return driver.name.toLowerCase().includes(this.input.toLowerCase());
       });
       return updatedDriver;
+    },
+    filteredItemLength() {
+      let cond;
+      if (this.filteredDrivers.length === 0) {
+        cond = true;
+      }
+      return cond;
     },
   },
 };
