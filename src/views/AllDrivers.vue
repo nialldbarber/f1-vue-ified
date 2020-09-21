@@ -1,11 +1,13 @@
 <template>
   <MainLayout>
     <h2>Drivers</h2>
-    <p v-if="filteredItemLength">EEEK! Error yo!</p>
-    <p v-if="loading">LOADING</p>
-    <p v-if="error">ERROR!</p>
-    <GridHeader />
-    <Grid :data="filteredDrivers" />
+    <Loading />
+    <Error :empty="filteredItemLength" />
+    <Error />
+    <div class="grid">
+      <GridHeader />
+      <Grid :data="filteredDrivers" />
+    </div>
   </MainLayout>
 </template>
 
@@ -14,10 +16,12 @@ import { mapGetters, mapActions } from 'vuex';
 import MainLayout from '~/components/layouts/MainLayout.vue';
 import GridHeader from '~/components/GridHeader.vue';
 import Grid from '~/components/Grid.vue';
+import Loading from '~/components/Loading.vue';
+import Error from '~/components/Error.vue';
 
 export default {
   name: 'AllDrivers',
-  components: { MainLayout, GridHeader, Grid },
+  components: { MainLayout, GridHeader, Grid, Loading, Error },
   methods: {
     ...mapActions(['fetchDrivers']),
   },
@@ -25,7 +29,7 @@ export default {
     this.fetchDrivers();
   },
   computed: {
-    ...mapGetters(['drivers', 'loading', 'error', 'input']),
+    ...mapGetters(['drivers', 'loading', 'input']),
     filteredDrivers() {
       const updatedDriver = this.drivers.filter((driver) => {
         return driver.name.toLowerCase().includes(this.input.toLowerCase());
