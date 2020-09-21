@@ -45,3 +45,13 @@ The application is a simple table that will display F1 drivers who have won a ch
 ## Todos
 
 - [ ] Fetch api - get drivers and display them in Grid component
+
+### Components
+
+- [x] Grid
+- [ ] Table headers
+- [ ] Table rows
+- [ ] Driver details box
+- [x] Header
+- [x] Navigation
+- [x] Search bar
