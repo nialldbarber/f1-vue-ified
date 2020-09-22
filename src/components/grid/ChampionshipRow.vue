@@ -36,13 +36,18 @@ export default {
 
 .modal {
   position: absolute;
+  bottom: 100%;
+  right: 50%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   background: dodgerblue;
   padding: 1rem;
   border-radius: 4px;
+  text-align: center;
   z-index: 2;
 
   p {
-    margin: 0.5rem 0;
+    margin: 0.5rem;
     color: #fff;
     font-weight: bold;
   }
