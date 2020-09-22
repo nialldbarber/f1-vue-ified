@@ -19,7 +19,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header {
+.grid-container {
+  position: sticky;
+  top: 0;
   background: #fff;
+  z-index: 2;
+  border-bottom: 1px solid #555;
 }
 </style>
