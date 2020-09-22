@@ -1,7 +1,9 @@
 import { createStore } from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
 import { API } from '~/constants';
 
 export const store = createStore({
+  plugins: [createPersistedState()],
   state: {
     input: '',
     drivers: [],
@@ -20,7 +22,6 @@ export const store = createStore({
         await fetch(API)
           .then((res) => res.json())
           .then((data) => {
-            // console.log('data', data);
             commit('setDrivers', data);
             commit('setLoading', false);
           });
