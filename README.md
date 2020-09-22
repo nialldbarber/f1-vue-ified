@@ -10,12 +10,12 @@ The application is a simple table that will display F1 drivers who have won a ch
 
 ---
 
-![Site](public/screenshots/graph.png?raw=true "Graph")
+![Site](screenshots/graph.png?raw=true "Graph")
 
 ---
 
-![Site](public/screenshots/drivers.png?raw=true "Drivers")
+![Site](screenshots/drivers.png?raw=true "Drivers")
 
 ---
 
-![Site](public/screenshots/driver.png?raw=true "Driver")
+![Site](screenshots/driver.png?raw=true "Driver")
