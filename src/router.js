@@ -4,7 +4,7 @@ import Driver from '~/views/Driver.vue';
 
 const routes = [
   { path: '/', component: AllDrivers },
-  { path: '/driver/:id', component: Driver },
+  { path: '/driver/:id', component: Driver, name: 'driver' },
 ];
 
 const router = createRouter({

@@ -1,7 +1,6 @@
 <template>
   <div class="grid-container">
     <div
-      class="row"
       v-for="{
         id,
         name,
@@ -15,13 +14,15 @@
       } in data"
       :key="id"
     >
-      <Row :row="name" />
-      <AgeRow :born="born" :died="died" />
-      <Row :row="country" />
-      <TeamRow :teams="teams" />
-      <Row :row="poles" />
-      <Row :row="wins" />
-      <ChampionshipRow :championships="championships" />
+      <router-link :to="{ name: 'driver', params: { id: id } }" class="row">
+        <Row :row="name" />
+        <AgeRow :born="born" :died="died" />
+        <Row :row="country" />
+        <TeamRow :teams="teams" />
+        <Row :row="poles" />
+        <Row :row="wins" />
+        <ChampionshipRow :championships="championships" />
+      </router-link>
     </div>
   </div>
 </template>
