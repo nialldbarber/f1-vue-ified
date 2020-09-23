@@ -2,6 +2,7 @@
 	import { Link } from "svelte-routing";
 	import GridHeader from "../components/grid/GridHeader.svelte";
 	import ChampRow from "../components/grid/ChampRow.svelte";
+	import TeamsRow from "../components/grid/TeamsRow.svelte";
 	import { getAge } from "../utils";
 	import { API } from "../constants";
 
@@ -37,7 +38,7 @@
 				<div>{driver.name}</div>
 				<div>{getAge(driver.born, driver.died)}</div>
 				<div>{driver.country}</div>
-				<div>{driver.teams}</div>
+				<TeamsRow teams={driver.teams} />
 				<div>{driver.poles}</div>
 				<div>{driver.wins}</div>
 				<ChampRow champs={driver.championships} />
