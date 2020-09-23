@@ -1,8 +1,6 @@
 <script>
-	import { Router, Link, Route } from "svelte-routing";
 	import { input } from "./store";
-	import AllDrivers from "./views/AllDrivers.svelte";
-	import Driver from "./views/Driver.svelte";
+	import Routing from "./components/Routing.svelte";
 	import Header from "./components/Header.svelte";
 	import Grid from "./components/Grid.svelte";
 	import Search from "./components/Search.svelte";
@@ -11,18 +9,7 @@
 <style>
 </style>
 
-<Router>
-	<nav>
-		<Link to="/">All Drivers</Link>
-		<Link to="/drivers">Individual driver</Link>
-	</nav>
-	<div>
-		<Route path="/" component={AllDrivers} />
-		<Route path="/drivers/:id">
-			<Driver />
-		</Route>
-	</div>
-</Router>
+<Routing />
 <main>
 	<Header />
 	<Grid />
