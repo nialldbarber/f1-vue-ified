@@ -1,9 +1,9 @@
 <script>
 	import { getContext } from "svelte";
 	import { ROUTER } from "svelte-routing/src/contexts";
-	const { activeRoute } = getContext(ROUTER);
 	import { API } from "../constants";
 
+	const { activeRoute } = getContext(ROUTER);
 	const uri = $activeRoute.uri;
 	const driverId = uri.substr(uri.lastIndexOf("/") + 1);
 

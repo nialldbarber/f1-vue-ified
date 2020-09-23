@@ -6,6 +6,9 @@
 </script>
 
 <style type="text/scss">
+	a {
+		color: inherit;
+	}
 </style>
 
 <main>

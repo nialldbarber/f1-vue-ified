@@ -33,7 +33,6 @@ export const store = createStore({
     },
     searchDrivers: ({ commit }, input) => {
       commit('setInput', input);
-      console.log();
     },
   },
   mutations: {
