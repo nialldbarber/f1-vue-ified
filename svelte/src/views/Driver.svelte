@@ -2,7 +2,6 @@
 	import { getContext } from "svelte";
 	import { ROUTER } from "svelte-routing/src/contexts";
 	const { activeRoute } = getContext(ROUTER);
-
 	import { API } from "../constants";
 
 	const uri = $activeRoute.uri;

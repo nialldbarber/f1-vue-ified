@@ -4,6 +4,4 @@
 <style>
 </style>
 
-<main>
-	<p>This is the header</p>
-</main>
+<h1>F1 Stats</h1>

@@ -1,5 +1,6 @@
 <script>
 	import { Link } from "svelte-routing";
+	import GridHeader from "../components/grid/GridHeader.svelte";
 	import { API } from "../constants";
 
 	const fetchDrivers = (async () => {
@@ -11,12 +12,15 @@
 <style>
 </style>
 
+<GridHeader />
 {#await fetchDrivers}
 	<p>...waiting</p>
 {:then data}
 	{#each data as driver}
 		<Link to={`/drivers/${driver.id}`}>
-			<li>{driver.name}</li>
+			<div>{driver.name}</div>
+			<div>{driver.born}</div>
+			<div>{driver.country}</div>
 		</Link>
 	{/each}
 {:catch err}
