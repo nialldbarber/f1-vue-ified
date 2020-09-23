@@ -18,8 +18,8 @@
 	</nav>
 	<div>
 		<Route path="/" component={AllDrivers} />
-		<Route path="/drivers/:id" let:params>
-			<Driver id={params.id} />
+		<Route path="/drivers/:id">
+			<Driver />
 		</Route>
 	</div>
 </Router>
