@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<style scoped type="text/scss">
+<style type="text/scss">
 	.grid-container {
 		position: sticky;
 		top: 0;
