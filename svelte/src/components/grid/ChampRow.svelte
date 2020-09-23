@@ -1,19 +1,10 @@
 <script>
-	import { each } from "svelte/internal";
-
 	export let champs;
-
 	let count = champs.length;
-
 	let isHovered = false;
 
-	function enter() {
-		isHovered = true;
-	}
-
-	function exit() {
-		isHovered = false;
-	}
+	const enter = () => (isHovered = true);
+	const exit = () => (isHovered = false);
 </script>
 
 <style type="text/scss">
