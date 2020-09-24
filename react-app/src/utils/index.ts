@@ -1,4 +1,4 @@
-function getAge(birthDate: string, deathDate: string) {
+function getAge(birthDate?: string, deathDate?: string) {
   let date;
   if (deathDate) {
     date = Math.floor(

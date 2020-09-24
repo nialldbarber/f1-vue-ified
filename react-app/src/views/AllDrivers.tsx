@@ -3,6 +3,7 @@ import {useQuery} from 'react-query';
 import Row from '../components/grid/Row';
 import {API} from '../constants';
 import {RowProps} from '../components/grid/Row';
+import HeaderRow from '../components/grid/HeaderRow';
 
 const AllDrivers = () => {
   const {isLoading, error, data} = useQuery('repoData', () =>
@@ -16,6 +17,7 @@ const AllDrivers = () => {
 
   return (
     <div>
+      <HeaderRow />
       {data.map(
         ({
           id,
