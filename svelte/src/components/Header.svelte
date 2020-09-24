@@ -1,8 +1,12 @@
 <script>
-	import { Link } from "svelte-routing";
+	import { Router, Link } from "svelte-routing";
 </script>
 
 <style>
 </style>
 
-<h1>F1 Stats</h1>
+<Router>
+	<Link to="/">
+		<h1>F1 Stats</h1>
+	</Link>
+</Router>

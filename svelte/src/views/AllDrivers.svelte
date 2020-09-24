@@ -1,19 +1,24 @@
 <script>
-	import { Link } from "svelte-routing";
+	import { onMount } from "svelte";
+	import { input } from "../store";
 	import GridHeader from "../components/grid/GridHeader.svelte";
-	import ChampRow from "../components/grid/ChampRow.svelte";
-	import TeamsRow from "../components/grid/TeamsRow.svelte";
-	import { getAge } from "../utils";
+	import Row from "../components/Row.svelte";
 	import { API } from "../constants";
 
-	const fetchDrivers = (async () => {
-		const response = await fetch(API);
-		return await response.json();
-	})();
+	let drivers = [];
+
+	onMount(async () => {
+		const res = await fetch(API);
+		drivers = await res.json();
+	});
+
+	$: updatedDrivers = drivers.filter(driver => {
+		return driver.name.toLowerCase().includes($input.toLowerCase());
+	});
 </script>
 
 <style type="text/scss">
-	.row {
+	:global(.row) {
 		display: grid;
 		grid-template-columns: 3fr 1fr 2fr 3fr 2fr 2fr 2fr;
 		min-height: 50px;
@@ -29,22 +34,6 @@
 </style>
 
 <GridHeader />
-{#await fetchDrivers}
-	<p>...waiting</p>
-{:then data}
-	{#each data as driver}
-		<Link to={`/drivers/${driver.id}`}>
-			<div class="row">
-				<div>{driver.name}</div>
-				<div>{getAge(driver.born, driver.died)}</div>
-				<div>{driver.country}</div>
-				<TeamsRow teams={driver.teams} />
-				<div>{driver.poles}</div>
-				<div>{driver.wins}</div>
-				<ChampRow champs={driver.championships} />
-			</div>
-		</Link>
-	{/each}
-{:catch err}
-	<p>Oh dang! {err}</p>
-{/await}
+{#each updatedDrivers as driver}
+	<Row {driver} />
+{/each}

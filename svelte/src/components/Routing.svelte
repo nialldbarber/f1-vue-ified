@@ -1,5 +1,5 @@
 <script>
-	import { Router, Link, Route } from "svelte-routing";
+	import { Router, Route } from "svelte-routing";
 	import AllDrivers from "../views/AllDrivers.svelte";
 	import Driver from "../views/Driver.svelte";
 </script>
