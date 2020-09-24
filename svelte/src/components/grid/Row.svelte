@@ -1,9 +1,9 @@
 <script>
 	export let driver;
 	import { Link } from "svelte-routing";
-	import ChampRow from "../components/grid/ChampRow.svelte";
-	import TeamsRow from "../components/grid/TeamsRow.svelte";
-	import AgeRow from "./grid/AgeRow.svelte";
+	import ChampRow from "./ChampRow.svelte";
+	import TeamsRow from "./TeamsRow.svelte";
+	import AgeRow from "./AgeRow.svelte";
 </script>
 
 <style>

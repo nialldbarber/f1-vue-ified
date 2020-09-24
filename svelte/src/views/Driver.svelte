@@ -17,11 +17,23 @@
 </style>
 
 {#await fetchDrivers}
-	<p>...waiting</p>
+	<p>...loading</p>
 {:then data}
 	{#each data as driver}
 		{#if driver.id === driverId}
-			<li>{driver.name}</li>
+			<h2>{driver.name}</h2>
+			<p>Born: {driver.born}</p>
+			<p>Died: {driver.died}</p>
+			<p>Country: {driver.country}</p>
+
+			<div class="teams">
+				<span>Teams: </span>
+				{#each driver.teams as team}<span>{team}</span>{/each}
+			</div>
+
+			<p>Poles: {driver.poles}</p>
+			<p>Wins: {driver.wins}</p>
+			<p>Championships: {driver.championships}</p>
 		{/if}
 	{/each}
 {:catch err}

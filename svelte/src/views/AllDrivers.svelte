@@ -2,7 +2,8 @@
 	import { onMount } from "svelte";
 	import { input } from "../store";
 	import GridHeader from "../components/grid/GridHeader.svelte";
-	import Row from "../components/Row.svelte";
+	import Row from "../components/grid/Row.svelte";
+	import Search from "../components/Search.svelte";
 	import { API } from "../constants";
 
 	let drivers = [];
@@ -33,6 +34,7 @@
 	}
 </style>
 
+<Search />
 <GridHeader />
 {#each updatedDrivers as driver}
 	<Row {driver} />
