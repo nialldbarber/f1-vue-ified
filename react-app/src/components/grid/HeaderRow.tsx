@@ -1,17 +1,20 @@
 import React from 'react';
+import {RowContainer} from '../../views/AllDrivers';
 
 const HeaderRow = () => {
   return (
     <div className="grid-container">
-      <div className="header row">
-        <div>Name</div>
-        <div>Age</div>
-        <div>Country</div>
-        <div>Team(s)</div>
-        <div>Poles</div>
-        <div>Wins</div>
-        <div>Championship(s)</div>
-      </div>
+      <RowContainer>
+        <div className="row">
+          <div>Name</div>
+          <div>Age</div>
+          <div>Country</div>
+          <div>Team(s)</div>
+          <div>Poles</div>
+          <div>Wins</div>
+          <div>Championship(s)</div>
+        </div>
+      </RowContainer>
     </div>
   );
 };

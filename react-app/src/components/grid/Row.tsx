@@ -2,7 +2,6 @@ import React, {FC} from 'react';
 import {getAge} from '../../utils';
 
 export interface RowProps {
-  id?: string;
   name?: string;
   born?: string;
   died?: string;
@@ -11,10 +10,10 @@ export interface RowProps {
   poles?: string;
   wins?: string;
   championships?: string;
+  styleType?: string;
 }
 
 const Row: FC<RowProps> = ({
-  id,
   name,
   born,
   died,
@@ -23,14 +22,20 @@ const Row: FC<RowProps> = ({
   poles,
   wins,
   championships,
+  styleType,
 }) => {
   const age = getAge(born, died);
 
   return (
-    <>
+    <div className={styleType}>
       <div>{name}</div>
-      <div>{age}</div>
-    </>
+      <div style={{color: died ? 'red' : ''}}>{age}</div>
+      <div>{country}</div>
+      <div>{teams}</div>
+      <div>{poles}</div>
+      <div>{wins}</div>
+      <div>{championships}</div>
+    </div>
   );
 };
 
