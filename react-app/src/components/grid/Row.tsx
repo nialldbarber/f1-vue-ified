@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {getAge} from '../../utils';
+import TeamRow from './TeamRow';
 
 export interface RowProps {
   name?: string;
@@ -31,7 +32,7 @@ const Row: FC<RowProps> = ({
       <div>{name}</div>
       <div style={{color: died ? 'red' : ''}}>{age}</div>
       <div>{country}</div>
-      <div>{teams}</div>
+      <TeamRow teams={teams} />
       <div>{poles}</div>
       <div>{wins}</div>
       <div>{championships}</div>
